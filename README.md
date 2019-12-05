@@ -27,3 +27,7 @@ npm install --save-dev pug
 npm install --save-dev bootstrap
 
 npm install --save-dev jquery
+
+npm install --save-dev popper
+
+npm install --save-dev pg
