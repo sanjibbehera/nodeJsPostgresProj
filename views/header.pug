@@ -1,0 +1,31 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+   a.navbar-brand(href='#') 
+     img(src='/public/img/dashboard.png', width='120px', height='70px')
+   button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+     span.navbar-toggler-icon
+   .collapse.navbar-collapse(id='navbarSupportedContent')
+     ul.navbar-nav.ml-auto
+       li.nav-item
+         a.nav-link.h4(href='#') #{navbar_title}
+       li.nav-item
+         a.nav-link.h4(href='#') &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       li.nav-item.active
+         a.nav-link.h4.mr-md-2(href='#') Home
+       li.nav-item.dropdown
+         a.nav-link.dropdown-toggle.h4(id='navbarDashboardMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dashboard
+           .dropdown-menu(aria-labelledby='navbarDashboardMenuLink')
+             a.dropdown-item(href='#') E2E1 App Dashboard
+             a.dropdown-item(href='#') E2E2 App Dashboard
+             a.dropdown-item(href='#') E2E1 DB Dashboard
+             a.dropdown-item(href='#') E2E2 DB Dashboard
+             a.dropdown-item(href='#') Overall Dashboard
+       li.nav-item.dropdown
+         a.nav-link.dropdown-toggle.h4(id='navbarServiceMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Service Configuration
+           .dropdown-menu(aria-labelledby='navbarServiceMenuLink')
+             a.dropdown-item(href='#') E2E1 App Service Configuration
+             a.dropdown-item(href='#') E2E2 App Service Configuration
+             a.dropdown-item(href='#') E2E1 DB Service Configuration
+             a.dropdown-item(href='#') E2E2 DB Service Configuration
+             a.dropdown-item(href='#') Overall Service Configuration
+       li.nav-item
+         a.nav-link.h4(href='#') About
