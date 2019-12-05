@@ -11,4 +11,4 @@ app.get('/', (req, res) => res.render('index', {
     title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System'
   }));
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Env Mgmt Dashboard App listening on port ${port}!`))
