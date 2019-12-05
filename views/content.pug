@@ -5,7 +5,9 @@
         table.card-table.table
           tr
             th(scope='row') Monitored Applications
-            td 10000
+            each user, i in envData
+              if user.environment_name === 'E2E1'
+                td #{user.cntr}
           tr
             th(scope='row') No of Application Processes Monitored
             td 10000
@@ -24,7 +26,9 @@
         table.card-table.table
           tr
             th(scope='row') Monitored Applications
-            td 10000
+            each user, i in envData
+              if user.environment_name === 'E2E2'
+                td #{user.cntr}
           tr
             th(scope='row') No of Application Processes Monitored
             td 10000
@@ -42,8 +46,10 @@
       center.card-header E2E1 DB Overview
         table.card-table.table
           tr
-            th(scope='row') Monitored DBs
-            td 10000
+            th(scope='row') Monitored Application DBs
+            each user, i in envData
+              if user.environment_name === 'E2E1 DB'
+                td #{user.cntr}
           tr
             th(scope='row') No of DB Processes Monitored
             td 10000
@@ -58,8 +64,10 @@
       center.card-header E2E2 DB Overview
         table.card-table.table
           tr
-            th(scope='row') Monitored DBs
-            td 10000
+            th(scope='row') Monitored Application DBs
+            each user, i in envData
+              if user.environment_name === 'E2E2 DB'
+                td #{user.cntr}
           tr
             th(scope='row') No of DB Processes Monitored
             td 10000
