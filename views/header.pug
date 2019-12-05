@@ -28,4 +28,15 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
              a.dropdown-item(href='#') E2E2 DB Service Configuration
              a.dropdown-item(href='#') Overall Service Configuration
        li.nav-item
-         a.nav-link.h4(href='#') About
+         a.nav-link.h4.mr-md-2(href='#', data-toggle='modal', data-target='#aboutModal') About
+
+.modal.fade(id='aboutModal' tabindex='-1' role='dialog' aria-labelledby='aboutModalLabel' aria-hidden='true')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5.modal-title(id='aboutModalLabel') Environment Management Dashboard.
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+      .modal-body Environment Management Dashboard.<br/><br/> Built on Python, Django, REST, Bootstrap, AJAX & PostgreSQL<br/> ©2019 SANJIB BEHERA Copyright Reserved. <br/> Rev 1.0.1
+      .modal-footer
+        footer.btn.btn-secondary(type='button', data-dismiss='modal') Close
