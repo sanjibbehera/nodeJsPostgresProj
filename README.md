@@ -1,6 +1,6 @@
 # nodeJsPostgresProj
 
-###### CREATE Postgres DB and DB User for this project.
+#### CREATE Postgres DB and DB User for this project.
 
 > CREATE USER nodeadmin with encrypted password 'nodeadmin';
 
@@ -12,11 +12,11 @@
 
 > alter role nodeadmin set default_transaction_isolation to 'read committed';
 
-###### Install Nodemon module as global..
+#### Install Nodemon module as global..
 
 > npm install -g nodemon
 
-###### Install the required Node modules to setup this Dashboard..
+#### Install the required Node modules to setup this Dashboard..
 
 > npm install --save-dev express
 
@@ -32,7 +32,7 @@
 
 > npm install --save-dev pg
 
-###### Some important and handy GIT Commands to push/pull code from GITHUB to your local computer/laptop.
+#### Some important and handy GIT Commands to push/pull code from GITHUB to your local computer/laptop.
 
 ###### The below first cmd will clone the GITHUB repo to your personal desktop/laptop and the Master branch will be cloned, if this is the correct branch, you are ready to start your work, or else use the below like cmd to pull another branch artifacts by issuing the below command. I pulled the code from the development branch issuing the below cmd.
 
