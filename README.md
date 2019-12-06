@@ -36,9 +36,9 @@ npm install --save-dev pg
 
 git clone https://github.com/sanjibbehera/nodeJsPostgresProj.git  
 
-###The above cmd will clone the GITHUB repo to your personal desktop/laptop and the Master branch will be cloned,
-###if this is the correct branch, you are ready to start your work, or else use the below like cmd to pull another branch 
-###artifacts by issuing the below command. I pulled the code from the development branch issuing the below cmd.
+##The above cmd will clone the GITHUB repo to your personal desktop/laptop and the Master branch will be cloned,
+if this is the correct branch, you are ready to start your work, or else use the below like cmd to pull another branch 
+artifacts by issuing the below command. I pulled the code from the development branch issuing the below cmd.
 
 git checkout development  ### Here the development is the checkout branch where you want to make development. 
 
