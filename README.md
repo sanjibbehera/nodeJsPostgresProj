@@ -34,6 +34,10 @@ npm install --save-dev pg
 
 ## Some important and handy GIT Commands to push/pull code from GITHUB to your local computer/laptop.
 
+git clone https://github.com/sanjibbehera/nodeJsPostgresProj.git
+
+git checkout development  ### Here the development is the checkout branch where you want to make development. 
+
 git add .
 
 git commit -m "Added reqd modules"
