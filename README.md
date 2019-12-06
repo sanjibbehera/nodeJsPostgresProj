@@ -31,3 +31,13 @@ npm install --save-dev jquery
 npm install --save-dev popper
 
 npm install --save-dev pg
+
+## Some important and handy GIT Commands to push/pull code from GITHUB to your local computer/laptop.
+
+git add .
+
+git commit -m "Added reqd modules"
+
+git push origin development  ### Here development is the actual branch, you want to work on.
+
+git pull origin development
