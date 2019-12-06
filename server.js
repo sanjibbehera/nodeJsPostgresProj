@@ -16,11 +16,11 @@ app.use(
   })
 );
 
-pool.query("select count(*) cntr, environment_name from env_appl group by environment_name", (error, results) => {
+pool.query("SELECT COUNT(*) cntr, environment_name FROM ENV_APPL GROUP BY environment_name", (error, results) => {
     if (error) {
       throw error
     }
-    //console.log(results.rows);
+    console.log(results.rows);
     envData = results.rows;
   });
 
