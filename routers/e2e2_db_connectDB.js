@@ -6,8 +6,19 @@ const getE2E2DBConfig = (request, response) => {
         if (error) {
           throw error
         }
-        response.status(200).json(results.rows)
+        response.json(results.rows);
       });
+};
+
+const dispE2E2DBConfig = (request, response) => {
+  pool.query('SELECT application_name, database_name, service_name, service_type, database_service_details, database_package_name, service_operation_health FROM e2e2_db_config_data ORDER BY id ASC', (error, dispresults) => {
+      if (error) {
+        throw error
+      }
+      //console.log(dispresults.rows);
+      response.json(dispresults.rows);
+      //response.send(dispresults.rows);
+    });
 };
 
 const getE2E2DBConfigById = (request, response) => {
@@ -59,6 +70,7 @@ const updateE2E2DBConfigById = (request, response) => {
 
 module.exports = {
     getE2E2DBConfig,
+    dispE2E2DBConfig,
     getE2E2DBConfigById,
     createE2E2DBConfig,
     updateE2E2DBConfigById,
