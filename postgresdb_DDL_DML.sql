@@ -32,7 +32,10 @@ CREATE TABLE E2E2_CONFIG_DATA (
   installation_downtime SMALLINT,
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
-  service_operation_conf_lastchanged TIMESTAMP
+  service_operation_conf_lastchanged TIMESTAMP,
+  CONSTRAINT e2e2_config_data_envapp_fk FOREIGN KEY (environment_name, application_name)
+          REFERENCES env_appl (environment_name, application_name) MATCH SIMPLE
+          ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 ### Create unique index on the above table.
@@ -60,7 +63,10 @@ CREATE TABLE E2E1_CONFIG_DATA (
   installation_downtime SMALLINT,
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
-  service_operation_conf_lastchanged TIMESTAMP
+  service_operation_conf_lastchanged TIMESTAMP,
+  CONSTRAINT e2e1_config_data_envapp_fk FOREIGN KEY (environment_name, application_name)
+          REFERENCES env_appl (environment_name, application_name) MATCH SIMPLE
+          ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 ### Create unique index on the above table.
@@ -83,7 +89,10 @@ CREATE TABLE E2E2_DB_CONFIG_DATA (
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
   service_operation_conf_lastchanged TIMESTAMP,
-  database_package_name VARCHAR(20)
+  database_package_name VARCHAR(20),
+  CONSTRAINT e2e2_db_config_data_envapp_fk FOREIGN KEY (environment_name, application_name)
+          REFERENCES env_appl (environment_name, application_name) MATCH SIMPLE
+          ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 ### Create unique index on the above table.
@@ -105,7 +114,10 @@ CREATE TABLE E2E1_DB_CONFIG_DATA (
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
   service_operation_conf_lastchanged TIMESTAMP,
-  database_package_name VARCHAR(20)
+  database_package_name VARCHAR(20),
+  CONSTRAINT e2e1_db_config_data_envapp_fk FOREIGN KEY (environment_name, application_name)
+          REFERENCES env_appl (environment_name, application_name) MATCH SIMPLE
+          ON UPDATE CASCADE ON DELETE RESTRICT
 );
 
 ### Create unique index on the above table.

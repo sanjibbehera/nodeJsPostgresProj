@@ -17,16 +17,30 @@ app.use(
 );
 
 pool.query("SELECT COUNT(*) cntr, environment_name FROM ENV_APPL GROUP BY environment_name", (error, results) => {
-    if (error) {
-      throw error
-    }
-    console.log(results.rows);
-    envData = results.rows;
-  });
+  if (error) {
+    throw error
+  }
+  console.log(results.rows);
+  envData = results.rows;
+});
 
-app.get('/', (req, res) => res.render('index', {  
-  title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System',
-  data: JSON.stringify(envData)
-  }));
+//app.get('/', (req, res) => res.render('index', {  
+//  title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System',
+//  data: JSON.stringify(envData)
+//  }));
+
+app.get('/', function(req, res) {
+  res.render('index', { 
+    title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System',
+    data: JSON.stringify(envData)
+  }, function(err, html) {
+      if (err) {
+          //res.redirect('/404');
+          res.status(404).end('error');
+      } else {
+          res.status(200).send(html);
+      }
+  });
+});
 
 app.listen(port, () => console.log(`Env Mgmt Dashboard App listening on port ${port}!`))
