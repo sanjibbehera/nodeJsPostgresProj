@@ -8,7 +8,7 @@
 
 ### Add Unique index to the above table.
 
->> CREATE UNIQUE INDEX dev_env_app_name_idx ON DEV_ENV_APPL (environment_name, application_name);
+>> CREATE UNIQUE INDEX IF NOT EXISTS dev_env_app_name_idx ON DEV_ENV_APPL (environment_name, application_name);
 
 ### Create the Tables holding the configuration related information for the dev environment for eg. DEV1 dev environment.
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS DEV1_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX DEV1_CONFIG_DATA_unique_data_idx on DEV1_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
+>> CREATE UNIQUE INDEX IF NOT EXISTS DEV1_CONFIG_DATA_unique_data_idx on DEV1_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
 
 ### Create the Tables holding the configuration related information for the dev environment for eg. DEV2 dev environment.
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX DEV2_CONFIG_DATA_unique_data_idx on DEV2_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
+>> CREATE UNIQUE INDEX IF NOT EXISTS DEV2_CONFIG_DATA_unique_data_idx on DEV2_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
 
 
 ### Create the Tables holding the configuration related information for the dev1 db environment for eg. DEV1 dev DB environment.
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX DEV1_DB_CONFIG_DATA_unique_data_idx on DEV1_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+>> CREATE UNIQUE INDEX IF NOT EXISTS DEV1_DB_CONFIG_DATA_unique_data_idx on DEV1_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
 
 ### Create the Tables holding the configuration related information for the dev2 db environment for eg. DEV2 dev DB environment.
 
@@ -107,4 +107,4 @@ CREATE TABLE IF NOT EXISTS DEV2_DB_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX DEV2_DB_CONFIG_DATA_unique_data_idx on DEV2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+>> CREATE UNIQUE INDEX IF NOT EXISTS DEV2_DB_CONFIG_DATA_unique_data_idx on DEV2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
