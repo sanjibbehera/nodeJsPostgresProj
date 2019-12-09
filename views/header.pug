@@ -1,6 +1,6 @@
 - var envName = env.NODE_ENV
 
-if envName==='dev'
+if envName==='development'
   - var apps1dashboard = 'DEV1 App Dashboard'
   - var apps2dashboard = 'DEV2 App Dashboard'
   - var db1dashboard = 'DEV1 DB Dashboard'
@@ -56,7 +56,6 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
              a.dropdown-item(href='/showAPPEnv2Data') #{apps2ServiceData}
              a.dropdown-item(href='/showDBEnv1Data') #{db1ServiceData}
              a.dropdown-item(href='/showDBEnv2Data') #{db2ServiceData}
-             a.dropdown-item(href='#') Overall Service Configuration
        li.nav-item
          a.nav-link.h4.mr-md-2(href='#', data-toggle='modal', data-target='#aboutModal') About
 
