@@ -1,6 +1,6 @@
-### Create the first base Table "ENV_APPL".
+### Create the first base Table "DEV_ENV_APPL".
 
->> CREATE TABLE IF NOT EXISTS ENV_APPL (
+>> CREATE TABLE IF NOT EXISTS DEV_ENV_APPL (
   ID SERIAL PRIMARY KEY,
   environment_name VARCHAR(20) NOT NULL,
   application_name VARCHAR(50) NOT NULL
@@ -8,7 +8,7 @@
 
 ### Add Unique index to the above table.
 
->> CREATE UNIQUE INDEX env_app_name_idx ON ENV_APPL (environment_name, application_name);
+>> CREATE UNIQUE INDEX dev_env_app_name_idx ON DEV_ENV_APPL (environment_name, application_name);
 
 ### Create the Tables holding the configuration related information for the dev environment for eg. DEV1 dev environment.
 
