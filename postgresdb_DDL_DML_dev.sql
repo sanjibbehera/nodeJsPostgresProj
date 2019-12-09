@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX DEV1_DB_CONFIG_DATA_unique_data_idx on E2E2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+>> CREATE UNIQUE INDEX DEV1_DB_CONFIG_DATA_unique_data_idx on DEV1_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
 
 ### Create the Tables holding the configuration related information for the dev2 db environment for eg. DEV2 dev DB environment.
 
