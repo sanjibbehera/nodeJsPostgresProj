@@ -1,6 +1,6 @@
 ### Create the first base Table "ENV_APPL".
 
->> CREATE TABLE env_appl (
+>> CREATE TABLE IF NOT EXISTS ENV_APPL (
   ID SERIAL PRIMARY KEY,
   environment_name VARCHAR(20) NOT NULL,
   application_name VARCHAR(50) NOT NULL
@@ -8,11 +8,11 @@
 
 ### Add Unique index to the above table.
 
->> CREATE UNIQUE INDEX env_app_name_idx on env_appl (environment_name, application_name);
+>> CREATE UNIQUE INDEX env_app_name_idx ON ENV_APPL (environment_name, application_name);
 
-### Create the Tables holding the configuration related information for the test environment for eg. E2E2 test environment.
+### Create the Tables holding the configuration related information for the dev environment for eg. DEV1 dev environment.
 
-CREATE TABLE E2E2_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS DEV1_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   sub_application_name VARCHAR(50),
@@ -35,11 +35,11 @@ CREATE TABLE E2E2_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX E2E2_CONFIG_DATA_unique_data_idx on E2E2_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
+>> CREATE UNIQUE INDEX DEV1_CONFIG_DATA_unique_data_idx on DEV1_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
 
-### Create the Tables holding the configuration related information for the test environment for eg. E2E1 test environment.
+### Create the Tables holding the configuration related information for the dev environment for eg. DEV2 dev environment.
 
-CREATE TABLE E2E1_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   sub_application_name VARCHAR(50),
@@ -62,12 +62,12 @@ CREATE TABLE E2E1_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX E2E1_CONFIG_DATA_unique_data_idx on E2E1_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
+>> CREATE UNIQUE INDEX DEV2_CONFIG_DATA_unique_data_idx on DEV2_CONFIG_DATA (application_name, sub_application_name, service_name, operation_name, service_name_version, configuration_url);
 
 
-### Create the Tables holding the configuration related information for the test db environment for eg. E2E2 test DB environment.
+### Create the Tables holding the configuration related information for the dev1 db environment for eg. DEV1 dev DB environment.
 
-CREATE TABLE E2E2_DB_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   database_name VARCHAR(20) NOT NULL,
@@ -85,11 +85,11 @@ CREATE TABLE E2E2_DB_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX E2E2_DB_CONFIG_DATA_unique_data_idx on E2E2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+>> CREATE UNIQUE INDEX DEV1_DB_CONFIG_DATA_unique_data_idx on E2E2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
 
-### Create the Tables holding the configuration related information for the test db environment for eg. E2E1 test DB environment.
+### Create the Tables holding the configuration related information for the dev2 db environment for eg. DEV2 dev DB environment.
 
-CREATE TABLE E2E1_DB_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS DEV2_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   database_name VARCHAR(20) NOT NULL,
@@ -107,4 +107,4 @@ CREATE TABLE E2E1_DB_CONFIG_DATA (
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX E2E1_DB_CONFIG_DATA_unique_data_idx on E2E1_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+>> CREATE UNIQUE INDEX DEV2_DB_CONFIG_DATA_unique_data_idx on DEV2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
