@@ -1,3 +1,33 @@
+- var envName = env.NODE_ENV
+
+if envName==='dev'
+  - var apps1dashboard = 'DEV1 App Dashboard'
+  - var apps2dashboard = 'DEV2 App Dashboard'
+  - var db1dashboard = 'DEV1 DB Dashboard'
+  - var db2dashboard = 'DEV2 DB Dashboard'
+  - var apps1ServiceData = 'DEV1 App Service Configuration'
+  - var apps2ServiceData = 'DEV2 App Service Configuration'
+  - var db1ServiceData = 'DEV1 DB Service Configuration'
+  - var db2ServiceData = 'DEV2 DB Service Configuration'
+else if envName==='test'
+  - var apps1dashboard = 'E2E1 App Dashboard'
+  - var apps2dashboard = 'E2E2 App Dashboard'
+  - var db1dashboard = 'E2E1 DB Dashboard'
+  - var db2dashboard = 'E2E2 DB Dashboard'
+  - var apps1ServiceData = 'E2E1 App Service Configuration'
+  - var apps2ServiceData = 'E2E2 App Service Configuration'
+  - var db1ServiceData = 'E2E1 DB Service Configuration'
+  - var db2ServiceData = 'E2E2 DB Service Configuration'
+else if envName==='prod'
+  - var apps1dashboard = 'PROD1 Application Dashboard'
+  - var apps2dashboard = 'PROD2 Application Dashboard'
+  - var db1dashboard = 'PROD1 DB Dashboard'
+  - var db2dashboard = 'PROD2 DB Dashboard'
+  - var apps1ServiceData = 'PROD1 App Service Configuration'
+  - var apps2ServiceData = 'PROD2 App Service Configuration'
+  - var db1ServiceData = 'PROD1 DB Service Configuration'
+  - var db2ServiceData = 'PROD2 DB Service Configuration'
+
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
    a.navbar-brand(href='#') 
      img(src='/public/img/dashboard.png', width='135px', height='75px')
@@ -14,18 +44,18 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
        li.nav-item.dropdown
          a.nav-link.dropdown-toggle.h4(id='navbarDashboardMenuLink', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dashboard
            .dropdown-menu(aria-labelledby='navbarDashboardMenuLink')
-             a.dropdown-item(href='#') E2E1 App Dashboard
-             a.dropdown-item(href='#') E2E2 App Dashboard
-             a.dropdown-item(href='#') E2E1 DB Dashboard
-             a.dropdown-item(href='#') E2E2 DB Dashboard
+             a.dropdown-item(href='#') #{apps1dashboard}
+             a.dropdown-item(href='#') #{apps2dashboard}
+             a.dropdown-item(href='#') #{db1dashboard}
+             a.dropdown-item(href='#') #{db2dashboard}
              a.dropdown-item(href='#') Overall Dashboard
        li.nav-item.dropdown
          a.nav-link.dropdown-toggle.h4(id='navbarServiceMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Service Configuration
            .dropdown-menu(aria-labelledby='navbarServiceMenuLink')
-             a.dropdown-item(href='/showE2E1data') E2E1 App Service Configuration
-             a.dropdown-item(href='/showE2E2data') E2E2 App Service Configuration
-             a.dropdown-item(href='/showE2E1DBdata') E2E1 DB Service Configuration
-             a.dropdown-item(href='/showE2E2DBdata') E2E2 DB Service Configuration
+             a.dropdown-item(href='/showAPPEnv1Data') #{apps1ServiceData}
+             a.dropdown-item(href='/showAPPEnv2Data') #{apps2ServiceData}
+             a.dropdown-item(href='/showDBEnv1Data') #{db1ServiceData}
+             a.dropdown-item(href='/showDBEnv2Data') #{db2ServiceData}
              a.dropdown-item(href='#') Overall Service Configuration
        li.nav-item
          a.nav-link.h4.mr-md-2(href='#', data-toggle='modal', data-target='#aboutModal') About
