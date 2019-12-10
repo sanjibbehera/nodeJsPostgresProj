@@ -5,7 +5,9 @@
 > NODE_ENV=development #### according to this entry Dashboard will differ with values according to the env..
 #### For different environment, we need to specify different DB names for each environment, hence adapt the .env file for the same..
 > DEV_DB_DATABASE=< DEV DB NAME >
+
 > TEST_DB_DATABASE=< TEST DB NAME >
+
 > PROD_DB_DATABASE=< PROD DB NAME >
 
 #### CREATE Postgres DB and DB User for this project.
