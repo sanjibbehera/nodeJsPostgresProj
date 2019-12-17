@@ -23,7 +23,7 @@ if(envName==='development'){
   
 router.get('/', function(req, res) {
   res.render('dev/showDev2DBDataConf', {title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System',
-  dataList: DB2ConfData}, function(err, html) {
+  db2DataList: DB2ConfData}, function(err, html) {
       if (err) {
           //res.redirect('/404');
           res.status(404).end('error');

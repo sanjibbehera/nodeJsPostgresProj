@@ -9,7 +9,8 @@ if envName==='development'
   - var apps2ServiceData = 'DEV2 App Service Configuration'
   - var db1ServiceData = 'DEV1 DB Service Configuration'
   - var db2ServiceData = 'DEV2 DB Service Configuration'
-  - var db2Url = '/showDBEnv2Data'
+  - var dbenv1Url = '/showDevDBEnv1Data'
+  - var dbenv2Url = '/showDevDBEnv2Data'
 else if envName==='test'
   - var apps1dashboard = 'E2E1 App Dashboard'
   - var apps2dashboard = 'E2E2 App Dashboard'
@@ -55,8 +56,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
            .dropdown-menu(aria-labelledby='navbarServiceMenuLink')
              a.dropdown-item(href='/showAPPEnv1Data') #{apps1ServiceData}
              a.dropdown-item(href='/showAPPEnv2Data') #{apps2ServiceData}
-             a.dropdown-item(href='/showDBEnv1Data') #{db1ServiceData}
-             a.dropdown-item(href=db2Url) #{db2ServiceData}
+             a.dropdown-item(href=dbenv1Url) #{db1ServiceData}
+             a.dropdown-item(href=dbenv2Url) #{db2ServiceData}
        li.nav-item
          a.nav-link.h4.mr-md-2(href='#', data-toggle='modal', data-target='#aboutModal') About
 

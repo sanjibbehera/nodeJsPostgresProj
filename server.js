@@ -24,10 +24,12 @@ app.use(
 var e2e2confdb = require('./routers/test/e2e2_db_connectDB');
 var dev2confdb = require('./routers/dev/dev2_db_connectDB');
 var mainPageRoutes = require('./routers/index');
+var devDB1ConfDataRoutes = require('./routers/dev/showDevDBEnv1Data');
 var devDB2ConfDataRoutes = require('./routers/dev/showDevDBEnv2Data');
 
 app.use('/', mainPageRoutes);
-app.use('/showDBEnv2Data', devDB2ConfDataRoutes);
+app.use('/showDevDBEnv1Data', devDB1ConfDataRoutes);
+app.use('/showDevDBEnv2Data', devDB2ConfDataRoutes);
 
 // E2E2 routers...
 app.get('/getE2E2DBConfig', e2e2confdb.getE2E2DBConfig);
@@ -41,4 +43,4 @@ app.post('/createDEV2DBConfig', dev2confdb.createDEV2DBConfig);
 app.delete('/deleteDEV2DBConfigById', dev2confdb.deleteDEV2DBConfigById);
 app.put('/deleteDEV2DBConfigById', dev2confdb.updateDEV2DBConfigById);
 
-app.listen(port, () => console.log(`Env Mgmt Dashboard App listening on port ${port}!`))
+app.listen(port, () => console.log(`Env Mgmt Dashboard App listening on port ${port}!`));
