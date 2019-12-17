@@ -26,7 +26,7 @@ if(envName==='development'){
 
 router.get('/', function(req, res) {
     res.render('main/index', {title: 'Environment Management Dashboard', navbar_title: 'Welcome to Environment Configuration Managed System',
-    dataList: envData}, function(err, html) {
+    monServdataList: envData}, function(err, html) {
         if (err) {
             //res.redirect('/404');
             res.status(404).end('error');

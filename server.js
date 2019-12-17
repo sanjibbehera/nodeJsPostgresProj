@@ -24,10 +24,14 @@ app.use(
 var e2e2confdb = require('./routers/test/e2e2_db_connectDB');
 var dev2confdb = require('./routers/dev/dev2_db_connectDB');
 var mainPageRoutes = require('./routers/index');
+var devAPP1ConfDataRoutes = require('./routers/dev/showDevAPPEnv1Data');
+var devAPP2ConfDataRoutes = require('./routers/dev/showDevAPPEnv2Data');
 var devDB1ConfDataRoutes = require('./routers/dev/showDevDBEnv1Data');
 var devDB2ConfDataRoutes = require('./routers/dev/showDevDBEnv2Data');
 
 app.use('/', mainPageRoutes);
+app.use('/showDevAPPEnv1Data', devAPP1ConfDataRoutes);
+app.use('/showDevAPPEnv2Data', devAPP2ConfDataRoutes);
 app.use('/showDevDBEnv1Data', devDB1ConfDataRoutes);
 app.use('/showDevDBEnv2Data', devDB2ConfDataRoutes);
 

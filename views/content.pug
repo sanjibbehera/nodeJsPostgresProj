@@ -24,7 +24,7 @@ else if envName==='prod'
         table.card-table.table
           tr
             th(scope='row') Monitored Applications
-            each dat, i in dataList
+            each dat, i in monServdataList
               if dat.environment_name==='DEV1'
                 td(align='right') #{dat.cntr}
               else if dat.environment_name==='E2E1'
@@ -47,7 +47,7 @@ else if envName==='prod'
         table.card-table.table
           tr
             th(scope='row') Monitored Applications
-            each dat, i in dataList
+            each dat, i in monServdataList
               if dat.environment_name==='DEV2'
                 td(align='right') #{dat.cntr}
               else if dat.environment_name==='E2E2'
@@ -70,7 +70,7 @@ else if envName==='prod'
         table.card-table.table
           tr
             th(scope='row') Monitored DBs
-            each dat, i in dataList
+            each dat, i in monServdataList
               if dat.environment_name==='DEV1 DB'
                 td(align='right') #{dat.cntr}
               else if dat.environment_name==='E2E1 DB'
@@ -90,7 +90,7 @@ else if envName==='prod'
         table.card-table.table
           tr
             th(scope='row') Monitored DBs
-            each dat, i in dataList
+            each dat, i in monServdataList
               if dat.environment_name==='DEV2 DB'
                 td(align='right') #{dat.cntr}
               else if dat.environment_name==='E2E2 DB'

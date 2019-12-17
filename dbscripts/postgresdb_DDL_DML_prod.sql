@@ -1,6 +1,6 @@
 ### Create the first base Table "DEV_ENV_APPL".
 
->> CREATE TABLE IF NOT EXISTS DEV_ENV_APPL (
+>> CREATE TABLE IF NOT EXISTS PROD_ENV_APPL (
   ID SERIAL PRIMARY KEY,
   environment_name VARCHAR(20) NOT NULL,
   application_name VARCHAR(50) NOT NULL
@@ -12,7 +12,7 @@
 
 ### Create the Tables holding the configuration related information for the dev environment for eg. DEV1 dev environment.
 
-CREATE TABLE IF NOT EXISTS DEV1_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS PROD1_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   sub_application_name VARCHAR(50),
@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS DEV1_CONFIG_DATA (
   application_support_type VARCHAR(50) NOT NULL,
   configuration_url VARCHAR(1000) NOT NULL,
   credentials_base64 VARCHAR(150),
+  application_package_name VARCHAR(35),
   service_operation_health SMALLINT NOT NULL,
   service_operation_healthcheckTimestamp TIMESTAMP,
   installation_downtime SMALLINT DEFAULT 0,
@@ -39,7 +40,7 @@ CREATE TABLE IF NOT EXISTS DEV1_CONFIG_DATA (
 
 ### Create the Tables holding the configuration related information for the dev environment for eg. DEV2 dev environment.
 
-CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS PROD2_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   sub_application_name VARCHAR(50),
@@ -53,6 +54,7 @@ CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
   application_support_type VARCHAR(50) NOT NULL,
   configuration_url VARCHAR(1000) NOT NULL,
   credentials_base64 VARCHAR(150),
+  application_package_name VARCHAR(35),
   service_operation_health SMALLINT NOT NULL,
   service_operation_healthcheckTimestamp TIMESTAMP,
   installation_downtime SMALLINT DEFAULT 0,
@@ -67,7 +69,7 @@ CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
 
 ### Create the Tables holding the configuration related information for the dev1 db environment for eg. DEV1 dev DB environment.
 
-CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS PROD1_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   database_name VARCHAR(20) NOT NULL,
@@ -89,7 +91,7 @@ CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
 
 ### Create the Tables holding the configuration related information for the dev2 db environment for eg. DEV2 dev DB environment.
 
-CREATE TABLE IF NOT EXISTS DEV2_DB_CONFIG_DATA (
+CREATE TABLE IF NOT EXISTS PROD2_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
   database_name VARCHAR(20) NOT NULL,
