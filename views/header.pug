@@ -13,6 +13,10 @@ if envName==='development'
   - var dbenv2Url = '/showDevDBEnv2Data'
   - var appenv1Url = '/showDevAPPEnv1Data'
   - var appenv2Url = '/showDevAPPEnv2Data'
+  - var appenv1DashboardUrl = '/showDevAPPEnv1DashboardData'
+  - var appenv2DashboardUrl = '/showDevAPPEnv2DashboardData'
+  - var dbenv1DashboardUrl = '/showDevDBEnv1DashboardData'
+  - var dbenv2DashboardUrl = '/showDevDBEnv2DashboardData'
 else if envName==='test'
   - var apps1dashboard = 'E2E1 App Dashboard'
   - var apps2dashboard = 'E2E2 App Dashboard'
@@ -26,6 +30,10 @@ else if envName==='test'
   - var dbenv2Url = '/showTestDBEnv2Data'
   - var appenv1Url = '/showTestAPPEnv1Data'
   - var appenv2Url = '/showTestAPPEnv2Data'
+  - var appenv1DashboardUrl = '/showTestAPPEnv1DashboardData'
+  - var appenv2DashboardUrl = '/showTestAPPEnv2DashboardData'
+  - var dbenv1DashboardUrl = '/showTestDBEnv1DashboardData'
+  - var dbenv2DashboardUrl = '/showTestDBEnv2DashboardData'
 else if envName==='prod'
   - var apps1dashboard = 'PROD1 Application Dashboard'
   - var apps2dashboard = 'PROD2 Application Dashboard'
@@ -39,6 +47,10 @@ else if envName==='prod'
   - var dbenv2Url = '/showProdDBEnv2Data'
   - var appenv1Url = '/showProdAPPEnv1Data'
   - var appenv2Url = '/showProdAPPEnv2Data'
+  - var appenv1DashboardUrl = '/showProdAPPEnv1DashboardData'
+  - var appenv2DashboardUrl = '/showProdAPPEnv2DashboardData'
+  - var dbenv1DashboardUrl = '/showProdDBEnv1DashboardData'
+  - var dbenv2DashboardUrl = '/showProdDBEnv2DashboardData'
 
 nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
    a.navbar-brand(href='#') 
@@ -56,10 +68,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
        li.nav-item.dropdown
          a.nav-link.dropdown-toggle.h4(id='navbarDashboardMenuLink', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Dashboard
            .dropdown-menu(aria-labelledby='navbarDashboardMenuLink')
-             a.dropdown-item(href='#') #{apps1dashboard}
-             a.dropdown-item(href='#') #{apps2dashboard}
-             a.dropdown-item(href='#') #{db1dashboard}
-             a.dropdown-item(href='#') #{db2dashboard}
+             a.dropdown-item(href=appenv1DashboardUrl) #{apps1dashboard}
+             a.dropdown-item(href=appenv2DashboardUrl) #{apps2dashboard}
+             a.dropdown-item(href=dbenv1DashboardUrl) #{db1dashboard}
+             a.dropdown-item(href=dbenv2DashboardUrl) #{db2dashboard}
              a.dropdown-item(href='#') Overall Dashboard
        li.nav-item.dropdown
          a.nav-link.dropdown-toggle.h4(id='navbarServiceMenuLink', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') Service Configuration
