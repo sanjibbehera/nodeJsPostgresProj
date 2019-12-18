@@ -21,19 +21,35 @@ app.use(
   })
 );
 
-var e2e2confdb = require('./routers/test/e2e2_db_connectDB');
-var dev2confdb = require('./routers/dev/dev2_db_connectDB');
+
 var mainPageRoutes = require('./routers/index');
+
+//Main Page Router..
+app.use('/', mainPageRoutes);
+
+// For Dev Envs.
+var dev2confdb = require('./routers/dev/dev2_db_connectDB');
 var devAPP1ConfDataRoutes = require('./routers/dev/showDevAPPEnv1Data');
 var devAPP2ConfDataRoutes = require('./routers/dev/showDevAPPEnv2Data');
 var devDB1ConfDataRoutes = require('./routers/dev/showDevDBEnv1Data');
 var devDB2ConfDataRoutes = require('./routers/dev/showDevDBEnv2Data');
 
-app.use('/', mainPageRoutes);
+// DEV1 Routers...
 app.use('/showDevAPPEnv1Data', devAPP1ConfDataRoutes);
 app.use('/showDevAPPEnv2Data', devAPP2ConfDataRoutes);
 app.use('/showDevDBEnv1Data', devDB1ConfDataRoutes);
 app.use('/showDevDBEnv2Data', devDB2ConfDataRoutes);
+
+// DEV2 routers...
+app.get('/getDEV2DBConfig', dev2confdb.getDEV2DBConfig);
+app.post('/createDEV2DBConfig', dev2confdb.createDEV2DBConfig);
+app.delete('/deleteDEV2DBConfigById', dev2confdb.deleteDEV2DBConfigById);
+app.put('/deleteDEV2DBConfigById', dev2confdb.updateDEV2DBConfigById);
+
+// For Test Envs.
+var e2e2confdb = require('./routers/test/e2e2_db_connectDB');
+
+// E2E1 routers..
 
 // E2E2 routers...
 app.get('/getE2E2DBConfig', e2e2confdb.getE2E2DBConfig);
@@ -41,10 +57,5 @@ app.post('/createE2E2DBConfig', e2e2confdb.createE2E2DBConfig);
 app.delete('/deleteE2E2DBConfigById', e2e2confdb.deleteE2E2DBConfigById);
 app.put('/deleteE2E2DBConfigById', e2e2confdb.updateE2E2DBConfigById);
 
-// DEV2 routers...
-app.get('/getDEV2DBConfig', dev2confdb.getDEV2DBConfig);
-app.post('/createDEV2DBConfig', dev2confdb.createDEV2DBConfig);
-app.delete('/deleteDEV2DBConfigById', dev2confdb.deleteDEV2DBConfigById);
-app.put('/deleteDEV2DBConfigById', dev2confdb.updateDEV2DBConfigById);
 
 app.listen(port, () => console.log(`Env Mgmt Dashboard App listening on port ${port}!`));
