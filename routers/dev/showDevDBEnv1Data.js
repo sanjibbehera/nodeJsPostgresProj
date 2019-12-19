@@ -5,7 +5,7 @@ const envName = process.env.NODE_ENV;
 const { pool } = require('../../dbConnect');
 
 if(envName==='development'){
-    pool.query("SELECT application_name, database_name, service_name, service_type, database_service_details, database_package_name, service_operation_health FROM dev1_db_config_data ORDER BY id ASC", (error, dispResults) => {
+    pool.query("SELECT application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_details, appl_db_package_name, appl_db_service_operation_health FROM dev1_db_config_data ORDER BY id ASC", (error, dispResults) => {
         if (error) {
           throw error
         }
@@ -13,7 +13,7 @@ if(envName==='development'){
       });
   }
   else if(envName==='test'){
-    pool.query("SELECT application_name, database_name, service_name, service_type, database_service_details, database_package_name, service_operation_health FROM dev1_db_config_data ORDER BY id ASC", (error, dispResults) => {
+    pool.query("SELECT application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_details, appl_db_package_name, appl_db_service_operation_health FROM dev1_db_config_data ORDER BY id ASC", (error, dispResults) => {
         if (error) {
           throw error
         }

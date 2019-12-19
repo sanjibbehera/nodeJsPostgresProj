@@ -72,41 +72,41 @@ CREATE TABLE IF NOT EXISTS DEV2_CONFIG_DATA (
 CREATE TABLE IF NOT EXISTS DEV1_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
-  database_name VARCHAR(20) NOT NULL,
-  service_name VARCHAR(50) NOT NULL,
-  service_type VARCHAR(10) NOT NULL,
-  service_health_information VARCHAR(4000),
-  service_operation_health SMALLINT NOT NULL,
-  service_operation_healthcheckTimestamp TIMESTAMP NOT NULL,
+  appl_database_name VARCHAR(20) NOT NULL,
+  appl_db_service_name VARCHAR(50) NOT NULL,
+  appl_db_service_type VARCHAR(10) NOT NULL,
+  appl_db_service_health_information VARCHAR(4000),
+  appl_db_service_operation_health SMALLINT NOT NULL,
+  appl_db_service_operation_healthcheckTimestamp TIMESTAMP NOT NULL,
   installation_downtime SMALLINT DEFAULT 0,
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
-  service_operation_conf_lastchanged TIMESTAMP,
-  database_service_details VARCHAR(50) NOT NULL,
-  database_package_name VARCHAR(35) NOT NULL
+  appl_db_service_operation_conf_lastchanged TIMESTAMP,
+  appl_db_service_details VARCHAR(50) NOT NULL,
+  appl_db_package_name VARCHAR(35) NOT NULL
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX IF NOT EXISTS DEV1_DB_CONFIG_DATA_unique_data_idx on DEV1_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+CREATE UNIQUE INDEX IF NOT EXISTS DEV1_DB_CONFIG_DATA_unique_data_idx on DEV1_DB_CONFIG_DATA (application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_details, appl_db_package_name);
 
 ### Create the Tables holding the configuration related information for the dev2 db environment for eg. DEV2 dev DB environment.
 
 CREATE TABLE IF NOT EXISTS DEV2_DB_CONFIG_DATA (
   ID SERIAL PRIMARY KEY,
   application_name VARCHAR(50) NOT NULL,
-  database_name VARCHAR(20) NOT NULL,
-  service_name VARCHAR(50) NOT NULL,
-  service_type VARCHAR(10) NOT NULL,
-  service_health_information VARCHAR(4000),
-  service_operation_health SMALLINT NOT NULL,
-  service_operation_healthcheckTimestamp TIMESTAMP NOT NULL,
+  appl_database_name VARCHAR(20) NOT NULL,
+  appl_db_service_name VARCHAR(50) NOT NULL,
+  appl_db_service_type VARCHAR(10) NOT NULL,
+  appl_db_service_health_information VARCHAR(4000),
+  appl_db_service_operation_health SMALLINT NOT NULL,
+  appl_db_service_operation_healthcheckTimestamp TIMESTAMP NOT NULL,
   installation_downtime SMALLINT DEFAULT 0,
   installation_startTimestamp TIMESTAMP,
   installation_finishTimestamp TIMESTAMP,
-  service_operation_conf_lastchanged TIMESTAMP,
-  database_service_details VARCHAR(50) NOT NULL,
-  database_package_name VARCHAR(35) NOT NULL
+  appl_db_service_operation_conf_lastchanged TIMESTAMP,
+  appl_db_service_details VARCHAR(50) NOT NULL,
+  appl_db_package_name VARCHAR(35) NOT NULL
 );
 
 ### Create unique index on the above table.
->> CREATE UNIQUE INDEX IF NOT EXISTS DEV2_DB_CONFIG_DATA_unique_data_idx on DEV2_DB_CONFIG_DATA (application_name, database_name, service_name, service_type, database_service_details, database_package_name);
+CREATE UNIQUE INDEX IF NOT EXISTS DEV2_DB_CONFIG_DATA_unique_data_idx on DEV2_DB_CONFIG_DATA (application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_details, appl_db_package_name);
