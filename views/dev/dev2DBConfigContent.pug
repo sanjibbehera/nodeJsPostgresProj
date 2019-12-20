@@ -1,26 +1,40 @@
-
-table.table.table-striped
-  thead.table-dark.black.white-text
-    tr
-      th(scope='col')  #
-      th(scope='col')  Application Name
-      th(scope='col')  Database Name
-      th(scope='col')  Service Name
-      th(scope='col')  Service Type
-      th(scope='col')  Database Service Details
-      th(scope='col')  Database Package
-      th(scope='col')  Service Health
-  tbody
-    each dat, i in db2DataList
-      tr
-        th(scope='row') #{i+1}
-        td  #{dat.application_name}
-        td  #{dat.database_name}
-        td  #{dat.service_name}
-        td  #{dat.service_type}
-        td  #{dat.database_service_details}
-        td  #{dat.database_package_name}
-        if dat.service_operation_health === 1
-          td.table-success
-        else
-          td.table-danger
+doctype html
+html
+  head
+  body
+  div.panel-body
+    table(id='dev2DBPaginationTable' cellspacing='0').table.table-striped.table-bordered
+      thead.table-dark.black.white-text
+        tr
+          th(scope='col')  #
+          th(scope='col')  Application Name
+          th(scope='col')  Database Name
+          th(scope='col')  Service Name
+          th(scope='col')  Service Type
+          th(scope='col')  Database Service Details
+          th(scope='col')  Database Package
+          th(scope='col')  Service Health
+      tbody
+        each dat, i in db2DataList
+          tr
+            th(scope='row') #{i+1}
+            td  #{dat.application_name}
+            td  #{dat.appl_database_name}
+            td  #{dat.appl_db_service_name}
+            td  #{dat.appl_db_service_type}
+            td  #{dat.appl_db_service_details}
+            td  #{dat.appl_db_package_name}
+            if dat.appl_db_service_operation_health === 1
+              td.table-success
+            else
+              td.table-danger
+  div.panel-footer
+    div.row
+      div.col.col-xs-4 Page 1 to 5
+      div.col.col-xs-8
+        ul.pagination.hidden-xs.pull-right
+          li.a(href="#") 1
+          li.a(href="#") 2
+        ul.pagination.hidden-xs.pull-right
+          li.a(href="#") "
+          li.a(href="#") "

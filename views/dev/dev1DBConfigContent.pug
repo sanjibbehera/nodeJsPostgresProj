@@ -15,12 +15,12 @@ table.table.table-striped
       tr
         th(scope='row') #{i+1}
         td  #{dat.application_name}
-        td  #{dat.database_name}
-        td  #{dat.service_name}
-        td  #{dat.service_type}
-        td  #{dat.database_service_details}
-        td  #{dat.database_package_name}
-        if dat.service_operation_health === 1
+        td  #{dat.appl_database_name}
+        td  #{dat.appl_db_service_name}
+        td  #{dat.appl_db_service_type}
+        td  #{dat.appl_db_service_details}
+        td  #{dat.appl_db_package_name}
+        if dat.appl_db_service_operation_health === 1
           td.table-success
         else
           td.table-danger
