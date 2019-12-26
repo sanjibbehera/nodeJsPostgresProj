@@ -20,9 +20,9 @@ const getDEV2DBConfigById = (request, response) => {
 };
 
 const createDEV2DBConfig = (request, response) => {
-    const {application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthcheckTimestamp, appl_db_service_details, appl_db_package_name } = request.body;
+    const {application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthchecktimestamp, appl_db_service_details, appl_db_package_name } = request.body;
 
-    pool.query('INSERT INTO DEV2_db_config_data ( application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthcheckTimestamp, appl_db_service_details, appl_db_package_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthcheckTimestamp, appl_db_service_details, appl_db_package_name], (error, results) => {
+    pool.query('INSERT INTO DEV2_db_config_data ( application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthchecktimestamp, appl_db_service_details, appl_db_package_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)', [application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthchecktimestamp, appl_db_service_details, appl_db_package_name], (error, results) => {
         if (error) {
           throw error
         }
@@ -43,11 +43,11 @@ const deleteDEV2DBConfigById = (request, response) => {
 
 const updateDEV2DBConfigById = (request, response) => {
   const id = parseInt(request.params.id)
-  const { application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthcheckTimestamp, appl_db_service_details, appl_db_package_name } = request.body
+  const { application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthchecktimestamp, appl_db_service_details, appl_db_package_name } = request.body
 
   pool.query(
-    'UPDATE DEV2_db_config_data SET application_name = $1, appl_database_name = $2, appl_db_service_name = $3, appl_db_service_type = $4, appl_db_service_operation_health = $5, appl_db_service_operation_healthcheckTimestamp= $6, appl_db_service_details = $7, appl_db_package_name = $8 WHERE id = $9',
-    [application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthcheckTimestamp, appl_db_service_details, appl_db_package_name, id],
+    'UPDATE DEV2_db_config_data SET application_name = $1, appl_database_name = $2, appl_db_service_name = $3, appl_db_service_type = $4, appl_db_service_operation_health = $5, appl_db_service_operation_healthchecktimestamp= $6, appl_db_service_details = $7, appl_db_package_name = $8 WHERE id = $9',
+    [application_name, appl_database_name, appl_db_service_name, appl_db_service_type, appl_db_service_operation_health, appl_db_service_operation_healthchecktimestamp, appl_db_service_details, appl_db_package_name, id],
     (error, results) => {
       if (error) {
         throw error
